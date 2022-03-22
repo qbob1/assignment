@@ -6,6 +6,10 @@
     &__title {
         font-size: 30px;
         font-weight: 900;
+
+        &_compressed {
+            margin-bottom: 30px;
+        }
     }
 
     &__subtitle {
@@ -22,6 +26,18 @@
         @media (max-width: 768px) {
             flex-direction: column;
         }
+
+        &_compressed {
+            @media (max-width: 1024px) {
+                flex-direction: column;
+            }
+        }
+    }
+
+    &__info {
+        &_compressed {
+            flex-grow: 1;
+        }
     }
 
     &__location {
@@ -36,6 +52,14 @@
             margin-right: 0;
             margin-bottom: 30px;
             height: 300px;
+        }
+
+        &_compressed {
+            @media (max-width: 1024px) {
+                max-width: unset;
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
         }
 
         &::after {
@@ -163,6 +187,11 @@
             grid-template-columns: 1fr 1fr;
             grid-column-gap: 30px;
             grid-row-gap: 20px;
+
+            &_compressed {
+                grid-template-columns: 1fr;
+                grid-row-gap: 10px;
+            }
 
             @media (max-width: 768px) {
                 grid-template-columns: 1fr;

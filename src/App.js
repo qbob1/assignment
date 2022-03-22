@@ -3,6 +3,7 @@ import Card from './components/Card/Card'
 
 // Styles
 import './styles/general.scss'
+import CompressedCard from './components/CompressedCard/CompressedCard'
 
 const App = () => {
     const cardData = useMemo(() => ({
@@ -39,7 +40,8 @@ const App = () => {
     return (
         <div>
             <div className='container'>
-                <Card data={cardData} />
+                {/*<Card data={cardData} />*/}
+                <CompressedCard data={cardData} />
             </div>
         </div>
     )

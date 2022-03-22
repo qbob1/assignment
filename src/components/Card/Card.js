@@ -1,5 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import StatisticsItem from '../StatisticsItem/StatisticsItem'
+import Description from '../Description/Description'
 
 // Styles
 import './Card.scss'
@@ -8,8 +10,7 @@ import './Card.scss'
 import relatedIcon from '../../assets/images/related.svg'
 import keywordsIcon from '../../assets/images/keywords.svg'
 import descIcon from '../../assets/images/desc.svg'
-import StatisticsItem from '../StatisticsItem/StatisticsItem'
-import Description from '../Description/Description'
+import statsIcon from '../../assets/images/stats.svg'
 
 const Card = ({data}) => {
     return (
@@ -60,7 +61,7 @@ const Card = ({data}) => {
                 <div className="card__stats">
                     <h4 className="card__section-name">
                         Statistics
-                        <img src={descIcon} alt="desc"/>
+                        <img src={statsIcon} alt="desc"/>
                     </h4>
                    <div className="card__stats-wrap">
                        {data.statistics.map(stat => (
