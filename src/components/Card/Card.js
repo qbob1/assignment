@@ -12,9 +12,9 @@ import keywordsIcon from '../../assets/images/keywords.svg'
 import descIcon from '../../assets/images/desc.svg'
 import statsIcon from '../../assets/images/stats.svg'
 
-const Card = ({data}) => {
+const Card = ({data, changeCompressed}) => {
     return (
-        <div className='card'>
+        <div className='card' onClick={changeCompressed}>
             <h1 className="card__title">
                 {data.title}
             </h1>

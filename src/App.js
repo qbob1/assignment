@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useState } from 'react'
 import Card from './components/Card/Card'
 
 // Styles
@@ -37,11 +37,16 @@ const App = () => {
         desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci architecto, aut consectetur cumque dignissimos dolore ea eaque enim error facilis harum illum ipsum laboriosam, laudantium maiores minus nisi voluptatum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci architecto, aut consectetur cumque dignissimos dolore ea eaque enim error facilis harum illum ipsum laboriosam, laudantium maiores minus nisi voluptatum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci architecto, aut consectetur cumque dignissimos dolore ea eaque enim error facilis harum illum ipsum laboriosam, laudantium maiores minus nisi voluptatum.',
     }), [])
 
+    const [compressed, setCompressed] = useState(false)
+
     return (
         <div>
             <div className='container'>
-                {/*<Card data={cardData} />*/}
-                <CompressedCard data={cardData} />
+                {
+                    compressed ?
+                        <CompressedCard data={cardData} changeCompressed={() => setCompressed(!compressed)} /> :
+                        <Card data={cardData} changeCompressed={() => setCompressed(!compressed)} />
+                }
             </div>
         </div>
     )

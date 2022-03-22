@@ -7,6 +7,8 @@
         font-size: 30px;
         font-weight: 900;
 
+        animation: fromLeft .5s forwards;
+
         &_compressed {
             margin-bottom: 30px;
         }
@@ -17,6 +19,8 @@
         font-size: 14px;
         font-weight: 900;
         margin-bottom: 30px;
+
+        animation: fromBottom .5s forwards;
     }
 
     &__content {
@@ -39,6 +43,8 @@
     }
 
     &__info {
+        animation: fromRight .5s forwards;
+
         &_compressed {
             flex-grow: 1;
         }
@@ -50,6 +56,8 @@
         height: 400px;
         margin-right: 60px;
         position: relative;
+
+        animation: fromLeft .5s forwards;
 
         @media (max-width: 768px) {
             max-width: unset;
@@ -116,6 +124,10 @@
         margin-left: -5px;
         width: calc(100% + 10px);
         margin-bottom: 30px;
+
+        &-wrap {
+            animation: fromBottom .5s forwards;
+        }
 
         &_compressed {
             display: grid;
@@ -221,6 +233,7 @@
 
     &__stats {
         margin-bottom: 50px;
+        animation: fromBottom .5s forwards;
 
         &-wrap {
             display: grid;
@@ -236,6 +249,42 @@
             @media (max-width: 768px) {
                 grid-template-columns: 1fr;
             }
+        }
+    }
+
+    @keyframes fromLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fromRight {
+        0% {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fromBottom {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 }
