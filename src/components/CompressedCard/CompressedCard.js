@@ -5,8 +5,8 @@ import StatisticsItem from '../StatisticsItem/StatisticsItem'
 import '../Card/Card.scss'
 
 // Images
-import descIcon from '../../assets/images/desc.svg'
 import statsIcon from '../../assets/images/stats.svg'
+import keywordsIcon from '../../assets/images/keywords.svg'
 
 const CompressedCard = ({data}) => {
     return (
@@ -33,6 +33,17 @@ const CompressedCard = ({data}) => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <h4 className="card__section-name">
+                Keywords
+                <img src={keywordsIcon} alt="keywords"/>
+            </h4>
+            <div className="card__keywords card__keywords_compressed">
+                {data.keywords.map(item => (
+                    <div className="card__keywords-item card__keywords-item_compressed" key={item}>
+                        <span>#</span><span>{item}</span>
+                    </div>
+                ))}
             </div>
         </div>
     )
