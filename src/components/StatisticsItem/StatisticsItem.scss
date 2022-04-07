@@ -34,9 +34,11 @@
         font-weight: 900;
         color: $blue;
         line-height: 1;
+        order: 1;
     }
 
     &_progress {
-
+        order: 2;
+        width:100%;
     }
 }

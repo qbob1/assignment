@@ -2,7 +2,7 @@
 
 .card {
     padding: 20px 0;
-
+    box-shadow: 0 1.5em 2.5em -0.5em rgb(0 0 0 / 10%);
     &__title {
         font-size: 30px;
         font-weight: 900;
@@ -25,15 +25,15 @@
 
     &__content {
         display: flex;
-        margin-bottom: 50px;
-
-        @media (max-width: 768px) {
-            flex-direction: column;
+        padding:1em;
+        @media (max-width: 500px) {
+            flex-direction: row;
+            flex-wrap: wrap;
         }
 
         &_compressed {
             @media (max-width: 1024px) {
-                flex-direction: column;
+                flex-direction: row;
             }
 
             @media (max-width: 768px) {
@@ -44,16 +44,20 @@
 
     &__info {
         animation: fromRight .5s forwards;
-
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
         &_compressed {
             flex-grow: 1;
+        }
+        svg{
+            transform:scale(2);
         }
     }
 
     &__location {
         max-width: 60%;
         width: 100%;
-        height: 400px;
         margin-right: 60px;
         position: relative;
 
@@ -63,7 +67,6 @@
             max-width: unset;
             margin-right: 0;
             margin-bottom: 30px;
-            height: 300px;
         }
 
         &_compressed {
@@ -72,18 +75,6 @@
                 margin-right: 0;
                 margin-bottom: 30px;
             }
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            top: 90px;
-            left: -20px;
-            border-radius: 4px;
-            width: calc(100% - 70px);
-            height: calc(100% - 70px);
-            background-color: rgba($gray, .1);
-            z-index: -1;
         }
 
         img {
@@ -101,6 +92,7 @@
         margin-left: -10px;
         width: calc(100% + 20px);
         margin-bottom: 30px;
+        animation: fromBottom .5s forwards;
 
         &-item {
             font-size: 18px;
@@ -236,11 +228,9 @@
         animation: fromBottom .5s forwards;
 
         &-wrap {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-column-gap: 30px;
-            grid-row-gap: 20px;
-
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             &_compressed {
                 grid-template-columns: 1fr;
                 grid-row-gap: 10px;
@@ -286,5 +276,12 @@
             opacity: 1;
             transform: translateY(0);
         }
+    }
+    @media (min-width: 768px) {
+        max-width: 45%;
+    }
+    &__bottom{
+        display: flex;
+        flex-direction: column;
     }
 }

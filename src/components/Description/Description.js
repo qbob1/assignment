@@ -21,13 +21,7 @@ const Description = ({text}) => {
 
     return (
         <div className='desc'>
-            {content} {
-                text.length > 300 && (
-                    <button className='desc__btn' type='button' onClick={() => setOpenedText(!openedText)}>
-                        {buttonText}
-                    </button>
-                )
-            }
+            {content} 
         </div>
     )
 }
